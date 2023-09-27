@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Data{% endblock %}
+
+{% block content %}
+
+    <section>
+        <h1>Crime Data</h1>
+        <hr>
+        {% for r in res %}
+            <article class="record">
+                <table>
+                    <thead>
+                        <th>Date</th><th>Address</th><th>Crime</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ r['rep_date'] }}</td>
+                            <td>{{ r['address'] }}</td>
+                            <td>{{ r['crime_type'] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        {% endfor %}
+    </section>
+
+{% endblock %}
